@@ -292,7 +292,6 @@ def semantic_search_usearch(
     Each query yields at most `top_k` results, and fewer when the index holds fewer matches.
     The time taken for the search is a float value.
     """
-    from usearch.compiled import ScalarKind
     from usearch.index import Index
 
     if corpus_embeddings is not None and corpus_index is not None:
@@ -334,7 +333,7 @@ def semantic_search_usearch(
     k = top_k
     if query_embeddings.dtype not in (np.uint8, np.int8):
         if rescore:
-            if corpus_index.dtype != ScalarKind.F32:
+            if corpus_precision != "float32":
                 rescore_embeddings = query_embeddings
                 k *= rescore_multiplier
             else:
