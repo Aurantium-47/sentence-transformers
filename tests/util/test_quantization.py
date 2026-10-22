@@ -688,20 +688,20 @@ def test_quantize_bfloat16_tensors(precision: str, input_type: str) -> None:
 
 
 @skip_without_usearch
-@pytest.mark.parametrize("dtype", ["f16", "f32"])
-@pytest.mark.parametrize("n_queries", [1, 2])
-def test_semantic_search_usearch_float_index_preserves_native_scores(dtype: str, n_queries: int) -> None:
+@pytest.mark.parametrize("dtype", ["f16", "bf16", "f32"])
+@pytest.mark.parametrize("metric", ["cos", "ip", "l2sq"])
+def test_semantic_search_usearch_float_index_preserves_native_scores(dtype: str, metric: str) -> None:
     from usearch.index import Index
 
     corpus = np.array([[0.125, 0.25], [0.5, 0.125], [-0.25, 0.5]], dtype=np.float32)
-    queries = np.array([[1, 0], [0, 1]], dtype=np.float32)[:n_queries]
-    index = Index(ndim=2, metric="cos", dtype=dtype)
+    queries = np.array([[1, 0], [0, 1]], dtype=np.float32)
+    index = Index(ndim=2, metric=metric, dtype=dtype)
     index.add(np.arange(len(corpus)), corpus)
     native = index.search(queries, count=2, exact=True)
 
     for rescore in (False, True):
         results, _ = semantic_search_usearch(queries, corpus_index=index, top_k=2, rescore=rescore, exact=True)
-        assert len(results) == n_queries
-        for row, keys, distances in zip(results, np.atleast_2d(native.keys), np.atleast_2d(native.distances)):
+        assert len(results) == len(queries)
+        for row, keys, distances in zip(results, native.keys, native.distances):
             assert [entry["corpus_id"] for entry in row] == keys.tolist()
             np.testing.assert_allclose([entry["score"] for entry in row], distances, rtol=1e-5, atol=1e-7)

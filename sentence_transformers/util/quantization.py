@@ -250,7 +250,8 @@ def semantic_search_usearch(
             both.
         corpus_precision: Precision of the corpus embeddings. The
             options are "float32", "int8", "ubinary", or "binary".
-            Default is "float32".
+            Default is "float32". Use "float32" for floating-point embeddings,
+            even if a supplied index stores them as float16 or bfloat16.
         top_k: Number of top results to retrieve. Default is 10.
         ranges: Ranges for quantization of embeddings. This is only used
             for int8 quantization, where the ranges refer to the
