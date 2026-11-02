@@ -1,0 +1,7 @@
+{
+  "synchronized_dataset_batch_sizes": {
+    "A": 8,
+    "B": 2
+  },
+  "multi_dataset_batch_sampler": "proportional"
+}

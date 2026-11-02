@@ -1,0 +1,1733 @@
+{
+  "policy": "JSON compact serialization; only absolute-path string values rewritten. Numerical values, arrays, ordering, return codes and source hashes unchanged. Original source machine paths not copied into this manifest; original string hashes permit private source verification. Harness executable AST unchanged, docstring instruction only. Original files preserved. No checkpoint files included.",
+  "files": [
+    {
+      "source": "native_runs/proportional/g1_full/rank0.json",
+      "published_path": "traces/standard/proportional/g1_full/rank0.json",
+      "original_sha256": "392dc5ef118eb6b2c15d902b92d111ca679caf7a4b09c5cb1746849c9ab41fd5",
+      "published_sha256": "2bf672aaacd6aef80baf3e26b1b6cdb574f2c10230d2162a75021b1277704954",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/proportional/g1_full/rank1.json",
+      "published_path": "traces/standard/proportional/g1_full/rank1.json",
+      "original_sha256": "1a5224837cd8a10a903df875c06d6458f90a5155b15ea6eaed9496631d5b3036",
+      "published_sha256": "254ad62c522f5399ac1d84bab3d16a47b0d5b7b7fe555e512bda1c31089b6181",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/proportional/g1_prefix/rank0.json",
+      "published_path": "traces/standard/proportional/g1_prefix/rank0.json",
+      "original_sha256": "78644cebd91241b9d673bed2596f64e2ac247c32b2ba4becd5986adbfd0c328a",
+      "published_sha256": "023d7c5c10846e3e006b7986158b6c10fd5bc86e6d193046d5b5986d367a001f",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/proportional/g1_prefix/rank1.json",
+      "published_path": "traces/standard/proportional/g1_prefix/rank1.json",
+      "original_sha256": "c74f8684f1acbfa81df9edafee6685db71ca715b61c11199ed42c98d1b4fe6d1",
+      "published_sha256": "5d37296606e03497e55d8680adbf6a506837827eebdf66283b87ba8cdc0cf995",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/proportional/g1_resume/rank0.json",
+      "published_path": "traces/standard/proportional/g1_resume/rank0.json",
+      "original_sha256": "3a9d6cc6d84cff1d3b9e2382942022c690c243c7df2503d8748bb508c443d46f",
+      "published_sha256": "d58fc6bae448868acefc7469a832527588e784ca0533a25088642d6536440a8a",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/proportional/g1_resume/rank1.json",
+      "published_path": "traces/standard/proportional/g1_resume/rank1.json",
+      "original_sha256": "843a15a48f81a1263920798980106ef85e32ee02a45b6158814b5ead2458204f",
+      "published_sha256": "85de741c97a5525db834341ec88435ff7671aff1a7e997deb24777382972dde3",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/proportional/g2_full/rank0.json",
+      "published_path": "traces/standard/proportional/g2_full/rank0.json",
+      "original_sha256": "ebf706a30cd5ec91c100524b06d2a0b5b8a778727b129c4103f59ed1b0e002f6",
+      "published_sha256": "9412aaa77fd58c330930b157791c8d711e5018c99c4aa16647fa69b208e5bf59",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/proportional/g2_full/rank1.json",
+      "published_path": "traces/standard/proportional/g2_full/rank1.json",
+      "original_sha256": "c5bdbc25bb925928fa39868473c286037cdf95c68941a44ce69ab2ec02919d9b",
+      "published_sha256": "8c666fbdc51de55e7998e7845ae926d7c061f42ee2a15bd647761d064ef7bb69",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/proportional/g2_prefix/rank0.json",
+      "published_path": "traces/standard/proportional/g2_prefix/rank0.json",
+      "original_sha256": "e03f81abcea67223e6184d74365c6a26dd49924e6bfa6aa94ffd38aeb2416983",
+      "published_sha256": "979c90c7de4de282d0e5214762bc9adfbb383f28071d4b52efeb0a4a89eaafd8",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/proportional/g2_prefix/rank1.json",
+      "published_path": "traces/standard/proportional/g2_prefix/rank1.json",
+      "original_sha256": "09ba05be03cbf2a8590b5716dd5a904c889c03bd4e6b416b428429daf42f32fa",
+      "published_sha256": "3e6cddfa766b749c783f8da4c4158cdb6578f1877fb7dfbea73bf4c3fde93460",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/proportional/g2_resume/rank0.json",
+      "published_path": "traces/standard/proportional/g2_resume/rank0.json",
+      "original_sha256": "2349e9bd2acf2bfc2b0de8183a35628b8419ad18eda2424d787c5fa6eeddcb01",
+      "published_sha256": "42280703211a837a1dcfb695e940c29b3f896161d6b8450fecfc27dabc4c79ae",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/proportional/g2_resume/rank1.json",
+      "published_path": "traces/standard/proportional/g2_resume/rank1.json",
+      "original_sha256": "507d1b58b35f55a4c7b65f2bc467854b2664a75f1670a6a5f0d962373a65fd10",
+      "published_sha256": "9739606bf53a9c96bd2b8ab733bb439907018b9ee0962f2031dde9a5d5f61c95",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/round_robin/g1_full/rank0.json",
+      "published_path": "traces/standard/round_robin/g1_full/rank0.json",
+      "original_sha256": "8e33aee9673c438a802912cf74a15485c88259ed0959248f9799bf7aeacbdf17",
+      "published_sha256": "65cd88a250a0aea47d8e6d6bf328e780a00162c1844cc792f6161e72696cd2cf",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/round_robin/g1_full/rank1.json",
+      "published_path": "traces/standard/round_robin/g1_full/rank1.json",
+      "original_sha256": "ccc969a5e550862dbdbf5872b0c4287fb715c5e6ac2643fece33c5f63127845c",
+      "published_sha256": "7f0556188c3e4020caf93078691cd45d271c5525d6629fb35931c31d4d6dbce8",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/round_robin/g1_prefix/rank0.json",
+      "published_path": "traces/standard/round_robin/g1_prefix/rank0.json",
+      "original_sha256": "66add395a5abc98867838585b5e74d0f015e0c81b6063235c3f1af6353fab8d9",
+      "published_sha256": "e68e05d5a972626289549580685501ffd7ea12f3f95ca3d725d135a7cdbdb6dc",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/round_robin/g1_prefix/rank1.json",
+      "published_path": "traces/standard/round_robin/g1_prefix/rank1.json",
+      "original_sha256": "d034579b96bfdbb27ec95fe439425f59ec5494162feaf119d859119a82cbc1ba",
+      "published_sha256": "00b97a545b23081235cb2e0e82bfe49b19a6ba9a2e167f7c1363337c6a331af5",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/round_robin/g1_resume/rank0.json",
+      "published_path": "traces/standard/round_robin/g1_resume/rank0.json",
+      "original_sha256": "48b17f2123df1194d2e5fa3b0a1f196b7b7927c7839a2d9f4aa57de982cdf8d1",
+      "published_sha256": "d09cb331794ed11cc96cf068173cd00a457777522d92230265852d7f5cd80896",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/round_robin/g1_resume/rank1.json",
+      "published_path": "traces/standard/round_robin/g1_resume/rank1.json",
+      "original_sha256": "01f3ce89ee9f023dac2a1d586ca497effed28ac84962817134e90669605cd2f6",
+      "published_sha256": "193b60e748e8583a4f415a02fdec89dd0466265f69051f7beddc9dd069b6d8e7",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/round_robin/g2_full/rank0.json",
+      "published_path": "traces/standard/round_robin/g2_full/rank0.json",
+      "original_sha256": "5d5ae0f24aa6b49b2b544bfb33d6a03e6dbdb55acb9a7b532249d7cfc3d0ad2c",
+      "published_sha256": "f79d0a79658cca8872f6d58d272fd9148556534ef5091b1c2b25e9d23f174c3e",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/round_robin/g2_full/rank1.json",
+      "published_path": "traces/standard/round_robin/g2_full/rank1.json",
+      "original_sha256": "6f00e1663446d0e5300c4b18942006db7388ab32021d822a964256bc39f45c4d",
+      "published_sha256": "f9e2b2cb842aa740fbae16fbd846d1903b2312ce0f4839d7db8250c9975c2d05",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/round_robin/g2_prefix/rank0.json",
+      "published_path": "traces/standard/round_robin/g2_prefix/rank0.json",
+      "original_sha256": "013b1a9915c5187d76237f2f807fc88bca2d8e04ad4057cbd48a06f90ac81b94",
+      "published_sha256": "74c6c2daff0626703fc0fa18ee7cabe28412f6a90057c4c04a8e5b87c6d7ca98",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/round_robin/g2_prefix/rank1.json",
+      "published_path": "traces/standard/round_robin/g2_prefix/rank1.json",
+      "original_sha256": "c15dc8bf6d3b5bb50453ca940fa6c326327dd8071ed1a9ee9b1287f87933a7cf",
+      "published_sha256": "9b7beabb9aa4891b451dc0c092a00ec21a24c000442fc00913bf52fa9182e9f4",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/round_robin/g2_resume/rank0.json",
+      "published_path": "traces/standard/round_robin/g2_resume/rank0.json",
+      "original_sha256": "f8872e448e66f581c9a847d4c698e69b809b7ed2053d6bcecaacf8ca734b54cd",
+      "published_sha256": "a475e9fef9aabadfd13493041d948da0331178d4e063dc522288c6be88d54d88",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/round_robin/g2_resume/rank1.json",
+      "published_path": "traces/standard/round_robin/g2_resume/rank1.json",
+      "original_sha256": "a448ff201137dee27b4df57c289020e36f8e833cf27aa4b254330c0db7bcc9ea",
+      "published_sha256": "b33ebf2b4aa9d773d21aa97effb8b1fb542876b7b3906395c209a09bec42145e",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_runs/proportional/validation_summary.json",
+      "published_path": "traces/standard/proportional/validation_summary.json",
+      "original_sha256": "519a74d85fac7836c8a3288835bb6587f76694ffde18b9fbef19e8a899976943",
+      "published_sha256": "eac6f13966450f8d6ab35f5a77cba9c099ffa380b7627a6d270d5a4da435638e",
+      "changes": []
+    },
+    {
+      "source": "native_runs/round_robin/validation_summary.json",
+      "published_path": "traces/standard/round_robin/validation_summary.json",
+      "original_sha256": "c1b4408a3d45056deedd6b3ed947993d578afb2078c13284c1bfe8a4e7bec6c3",
+      "published_sha256": "24fdb17052dbf0603475d921580366fbfa9124fab0057408d2654986f4b976c6",
+      "changes": []
+    },
+    {
+      "source": "native_tail_runs/proportional/g2_full/rank0.json",
+      "published_path": "traces/tail/proportional/g2_full/rank0.json",
+      "original_sha256": "96c8cee9eb7f06d2377923e0f2bb26b05da28c5ecd76b29ee74969446f5d61fe",
+      "published_sha256": "3e351f353e65ec65448b7b8faf2fa76d75acee3a3da51aa8d3ab24b13895536c",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_tail_runs/proportional/g2_full/rank1.json",
+      "published_path": "traces/tail/proportional/g2_full/rank1.json",
+      "original_sha256": "f3cb4c368e2e237e4f29adcf1c02abeca6fe112ca0370bfb457ea358c1dc45c5",
+      "published_sha256": "e79b25c957bc1b4fadda877a447eeea34014a375120c7bd145a0f2325c55d98f",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_tail_runs/proportional/g2_prefix/rank0.json",
+      "published_path": "traces/tail/proportional/g2_prefix/rank0.json",
+      "original_sha256": "dd60d4a29f3cd642fb9490a98d675fc67ce478ca88f4ef6424dfe99fd189db92",
+      "published_sha256": "4e471e4162061f4c0b4248f498eb945e5b19179811844390c93bf42890950f08",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_tail_runs/proportional/g2_prefix/rank1.json",
+      "published_path": "traces/tail/proportional/g2_prefix/rank1.json",
+      "original_sha256": "a3694b274e48b71f263fc03cc94c014fe801b60f7b670e5b47eb126cd60b5b08",
+      "published_sha256": "6af0fa387dba8167047223231f32efa397a1553c936f6b9ad880248609b817b7",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_tail_runs/proportional/g2_resume/rank0.json",
+      "published_path": "traces/tail/proportional/g2_resume/rank0.json",
+      "original_sha256": "d617ce3dc20dea8dbd14a260fb21b92ab5b6916945c6de6e05ce30fea2ca773b",
+      "published_sha256": "a6992a3a2b7b9408a96e6257fb04c82b9cb0dc19157695179680f07eb0df4138",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_tail_runs/proportional/g2_resume/rank1.json",
+      "published_path": "traces/tail/proportional/g2_resume/rank1.json",
+      "original_sha256": "7efb11779d9f16489ca0b0e1fbf36c400db021acbe97c8d806ed82b254c27055",
+      "published_sha256": "f1f08f48996b3bc322deb345fbdcadca5a81385a6480fe882580794dd4cad31d",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_tail_runs/round_robin/g2_full/rank0.json",
+      "published_path": "traces/tail/round_robin/g2_full/rank0.json",
+      "original_sha256": "5e42468aba86d2ead61f32a129727d40d5bee9612eab08f9cec82291f39a4a00",
+      "published_sha256": "8aa6786885975ee4684f88becce092d53924a2c00b54bd439268f9210b5a1fce",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_tail_runs/round_robin/g2_full/rank1.json",
+      "published_path": "traces/tail/round_robin/g2_full/rank1.json",
+      "original_sha256": "a026cb3e7fdcf16b4a1525a2fe75b121a98711a8be4159accf49d9408f7786d5",
+      "published_sha256": "a4bd3b9dcba7477c31a5ec345644d3ec5180184101aa78339ffd8921e658475e",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_tail_runs/round_robin/g2_prefix/rank0.json",
+      "published_path": "traces/tail/round_robin/g2_prefix/rank0.json",
+      "original_sha256": "ed9848eb8281c458a81d90acccc324b4d7ba7a65d1877ddb4d84e0d7e81c9b8c",
+      "published_sha256": "2aad0f808da839237ceaeec2e92b2963c0d8cc3e05d1766fc18fabe23f992b58",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_tail_runs/round_robin/g2_prefix/rank1.json",
+      "published_path": "traces/tail/round_robin/g2_prefix/rank1.json",
+      "original_sha256": "f35b15bd0280fe6767b9d06437bebeba509f48dae93dcdcecbbac914ce0a4836",
+      "published_sha256": "68461386b9f2992cfee0049997965965e8f322144ab73fe1c48d6cd5830a5346",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_tail_runs/round_robin/g2_resume/rank0.json",
+      "published_path": "traces/tail/round_robin/g2_resume/rank0.json",
+      "original_sha256": "434686f59d2a98a74d060b673a043d4691d70cf414345a28988ea1e5e6ab3224",
+      "published_sha256": "fbc830a1cdaed3ebbfd78447b785f0781f70a7e2301d9237bfe325bc7a74ec0c",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_tail_runs/round_robin/g2_resume/rank1.json",
+      "published_path": "traces/tail/round_robin/g2_resume/rank1.json",
+      "original_sha256": "b610034c91e7ea13e670ca9ab87c6ebeb16f8026f9cb0c3b4daf65c4d3359609",
+      "published_sha256": "be4f5e260a96ceba0a381794a4cee92711e58f9b4d813858ac2970fbb1b6f5b0",
+      "changes": [
+        {
+          "json_pointer": "/imported_source/trainer",
+          "original_string_sha256": "16bc361be1365764d704a577d0a2158b9816810afc0f18ddecfbb4355a5b3eba",
+          "replacement": "runtime/sentence_transformers/sentence_transformer/trainer.py"
+        },
+        {
+          "json_pointer": "/imported_source/base_trainer",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.trainer/path",
+          "original_string_sha256": "af17e1fe5c1fbbee5ae5f95ab07061c2ee963ca68acac3255859f053b0b1d92f",
+          "replacement": "runtime/sentence_transformers/base/trainer.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.sampler/path",
+          "original_string_sha256": "4819e915134beaeaa6712b750f398f462cb78314a8f95dfe444fcac91f50f59c",
+          "replacement": "runtime/sentence_transformers/base/sampler.py"
+        },
+        {
+          "json_pointer": "/source_hashes/sentence_transformers.base.training_args/path",
+          "original_string_sha256": "f99cb65b6f8ececa845d0b8a9a82c99e2473ff835ba2808b1ec61162f01b11cb",
+          "replacement": "runtime/sentence_transformers/base/training_args.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.data_loader/path",
+          "original_string_sha256": "35f28f069a3fcec6ee14ceff125939c6c9235bb43b3095e1123b79401260e380",
+          "replacement": "runtime/accelerate/data_loader.py"
+        },
+        {
+          "json_pointer": "/source_hashes/accelerate.accelerator/path",
+          "original_string_sha256": "e3cf277f615556779da9cefa27baf9e61458690bb873be39ce743aceef0e37cd",
+          "replacement": "runtime/accelerate/accelerator.py"
+        }
+      ]
+    },
+    {
+      "source": "native_tail_runs/proportional/validation_summary.json",
+      "published_path": "traces/tail/proportional/validation_summary.json",
+      "original_sha256": "a8468ef5bf6366397d9ba80abaebe6858008f8e1e5f9a7b267e79d12260ffbfc",
+      "published_sha256": "55251bd7e4f1227b986c20b65e64d0e3b9fa8a52fa3c0da3e36a8eae278134ce",
+      "changes": []
+    },
+    {
+      "source": "native_tail_runs/round_robin/validation_summary.json",
+      "published_path": "traces/tail/round_robin/validation_summary.json",
+      "original_sha256": "398ed7aa80cd58f23f4ae3d703bc3a9ce376c5ca0792165462f978b72a76bae2",
+      "published_sha256": "36d8ba04eee7043f072e77cfe43543a740809aeaa4821c639992cb049affd14e",
+      "changes": []
+    },
+    {
+      "source": "native_validation_matrix_summary.json",
+      "published_path": "evidence/native_validation_matrix_summary.json",
+      "original_sha256": "a8574cd222a23f10d0ca648708ba6eea35c28d61bf3c5b909a617db6430be335",
+      "published_sha256": "cc763def32f8c9414e90c1888a309031b08048342c5af95a8793359aac6a2b1e",
+      "changes": [
+        {
+          "json_pointer": "/outer_launchers/0/command/0",
+          "original_string_sha256": "c305028c341ad904fd90906a4ad8f34e517a473941222494268dd68eecf78484",
+          "replacement": "python"
+        },
+        {
+          "json_pointer": "/outer_launchers/0/command/1",
+          "original_string_sha256": "818e372753976706b0aa7eb807444baa7a653204333857e349d9d79db93b6dee",
+          "replacement": "native_trainer_validation.py"
+        },
+        {
+          "json_pointer": "/outer_launchers/0/command/3",
+          "original_string_sha256": "c9c988d1388717d74f14e5038cde2dcc359763b85edcabf9d5248c6cb08b5ebe",
+          "replacement": "round_robin_options.json"
+        },
+        {
+          "json_pointer": "/outer_launchers/0/command/5",
+          "original_string_sha256": "fc863becd89ba18bf42b3be6f34a24713878809ac2872905098eacbaf9d9357e",
+          "replacement": "traces/standard/round_robin"
+        },
+        {
+          "json_pointer": "/outer_launchers/1/command/0",
+          "original_string_sha256": "c305028c341ad904fd90906a4ad8f34e517a473941222494268dd68eecf78484",
+          "replacement": "python"
+        },
+        {
+          "json_pointer": "/outer_launchers/1/command/1",
+          "original_string_sha256": "818e372753976706b0aa7eb807444baa7a653204333857e349d9d79db93b6dee",
+          "replacement": "native_trainer_validation.py"
+        },
+        {
+          "json_pointer": "/outer_launchers/1/command/3",
+          "original_string_sha256": "98cb6bd43dea56ac0db1fa0f9120ae2d55a8660755a23c0e717e066dd22e0007",
+          "replacement": "proportional_options.json"
+        },
+        {
+          "json_pointer": "/outer_launchers/1/command/5",
+          "original_string_sha256": "3940eb3da45f9a226374ad546375286080831f1c73f497f454bfef5d43dac998",
+          "replacement": "traces/standard/proportional"
+        },
+        {
+          "json_pointer": "/outer_launchers/2/command/0",
+          "original_string_sha256": "c305028c341ad904fd90906a4ad8f34e517a473941222494268dd68eecf78484",
+          "replacement": "python"
+        },
+        {
+          "json_pointer": "/outer_launchers/2/command/1",
+          "original_string_sha256": "ca619dc4cc3bada19f3c68278772921f066c68e11f179354f3c9a0c255d1590c",
+          "replacement": "native_tail_trainer_validation.py"
+        },
+        {
+          "json_pointer": "/outer_launchers/2/command/3",
+          "original_string_sha256": "c9c988d1388717d74f14e5038cde2dcc359763b85edcabf9d5248c6cb08b5ebe",
+          "replacement": "round_robin_options.json"
+        },
+        {
+          "json_pointer": "/outer_launchers/2/command/5",
+          "original_string_sha256": "52fddcd641e04b4fc3be5649d0ec813a72f75f33060233dd15985ef5836961a1",
+          "replacement": "traces/tail/round_robin"
+        },
+        {
+          "json_pointer": "/outer_launchers/3/command/0",
+          "original_string_sha256": "c305028c341ad904fd90906a4ad8f34e517a473941222494268dd68eecf78484",
+          "replacement": "python"
+        },
+        {
+          "json_pointer": "/outer_launchers/3/command/1",
+          "original_string_sha256": "ca619dc4cc3bada19f3c68278772921f066c68e11f179354f3c9a0c255d1590c",
+          "replacement": "native_tail_trainer_validation.py"
+        },
+        {
+          "json_pointer": "/outer_launchers/3/command/3",
+          "original_string_sha256": "98cb6bd43dea56ac0db1fa0f9120ae2d55a8660755a23c0e717e066dd22e0007",
+          "replacement": "proportional_options.json"
+        },
+        {
+          "json_pointer": "/outer_launchers/3/command/5",
+          "original_string_sha256": "9a62a7638ee72ae1b61b3f25a2a3c29b23b79187dd9cbb2831ac869055e747e3",
+          "replacement": "traces/tail/proportional"
+        }
+      ]
+    },
+    {
+      "source": "runtime_provenance.json",
+      "published_path": "evidence/runtime_provenance.json",
+      "original_sha256": "584432fc5cffdb874abe5f65b425a37807d7711e07f514304e42f60bb9879144",
+      "published_sha256": "47ae25e80c8ca09263647833f29bc7c5cb0bd9a1394c966c898fbd2cd6b02c6e",
+      "changes": []
+    },
+    {
+      "source": "source_manifest.json",
+      "published_path": "evidence/source_manifest.json",
+      "original_sha256": "02f2fb25c71ac35ea4264f4733fa524b51a2fda911b8703c909150e2d3807c1d",
+      "published_sha256": "02f2fb25c71ac35ea4264f4733fa524b51a2fda911b8703c909150e2d3807c1d",
+      "changes": []
+    },
+    {
+      "source": "submitted-v1/validation/native_trainer_validation.py",
+      "published_path": "native_trainer_validation.py",
+      "original_sha256": "8734ba2e9ccda8dfb16052013e2af796b98b070b1523f85aaa9b069f462ffd8c",
+      "published_sha256": "bfc7e4a351a6fdd172b735f238d4bb3c1f4977ff87a436a38a94cb60b32f3f01",
+      "changes": [
+        {
+          "kind": "docstring-only",
+          "description": "Replace obsolete overlay instruction with normal editable installation instruction; executable AST unchanged."
+        }
+      ]
+    },
+    {
+      "source": "independent-tail-supplement/native_tail_trainer_validation.py",
+      "published_path": "native_tail_trainer_validation.py",
+      "original_sha256": "3dd9ca07d20688ac7cff868e4a1d19d6e978cada1b86ba631b6e68e143e0a421",
+      "published_sha256": "fd1bff292d12c98945f4cbc9a8ef6603429e0e5b5d64436c9c1d7691a4fa4c79",
+      "changes": [
+        {
+          "kind": "docstring-only",
+          "description": "Replace obsolete overlay instruction with normal editable installation instruction; executable AST unchanged."
+        }
+      ]
+    },
+    {
+      "source": "validation/round_robin_options.json",
+      "published_path": "round_robin_options.json",
+      "original_sha256": "a41936603dc9d223ca3463f5bdf57734e65e2bdd5045f8938287c3245dba93f1",
+      "published_sha256": "a41936603dc9d223ca3463f5bdf57734e65e2bdd5045f8938287c3245dba93f1",
+      "changes": []
+    },
+    {
+      "source": "validation/proportional_options.json",
+      "published_path": "proportional_options.json",
+      "original_sha256": "e7e0b0829ef342a2b71284fb0e32eabf82edaf168feda2c05583d5fc819da327",
+      "published_sha256": "e7e0b0829ef342a2b71284fb0e32eabf82edaf168feda2c05583d5fc819da327",
+      "changes": []
+    },
+    {
+      "source": "installed_requirements.txt",
+      "published_path": "requirements-replay.txt",
+      "original_sha256": "6cd010698e76e13adc4fc3ff099980c59944593db978d4e5b3ca87028041bc42",
+      "published_sha256": "1afb409abe695495361e4f8e825cdf2ba03c6be8588e67c85615c30aded337f1",
+      "changes": [
+        {
+          "kind": "dependency-installation",
+          "description": "Remove two baseline source archive requirements; sources are installed separately from fixed Git commits plus the ST patch. Add official PyTorch CPU wheel index."
+        }
+      ]
+    }
+  ]
+}

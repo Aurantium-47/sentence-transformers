@@ -1,0 +1,28 @@
+{
+  "historical_ddp_jobs": 18,
+  "historical_rank_json_traces": 36,
+  "new_ddp_runs_during_packaging": 0,
+  "json_only_oracle_replay": {
+    "passed": true,
+    "groups": 6,
+    "expected_runtime_files_verified": 303,
+    "result": "evidence/public_trace_oracle_replay.json"
+  },
+  "launcher_synthetic_nested_session_timeout_test": "passed; two descendants checked; zero running survivors",
+  "python_syntax_files_checked": 5,
+  "original_harness_executable_AST_unchanged": true,
+  "sanitization": "Only absolute path strings rewritten, JSON compacted; numerical values unchanged. Original imported hashes and pointer-level string changes in SANITIZATION.json.",
+  "binary_checkpoint_files_included": 0,
+  "private_path_identifier_and_common_token_scan": "passed (scoped textual scan; not general secret-scanner certification)",
+  "publication_status": "local preparation only; no remote URL or commit created",
+  "independent_compare": {
+    "reviewer": "separate parent-agent audit",
+    "scope": "36 rank JSON traces and 4 original validation summaries",
+    "numerical_values_compared": 618564,
+    "numerical_values_changed": 0,
+    "absolute_path_strings_rewritten": 252,
+    "harness_executable_AST_matches_original": true,
+    "production_only_patch_matches_upstream_candidate_three_production_hunks": true,
+    "prohibited_binary_private_literal_scan": "passed"
+  }
+}
