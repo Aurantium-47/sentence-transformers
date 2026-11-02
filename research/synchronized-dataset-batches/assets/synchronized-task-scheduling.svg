@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+<title id="title">Align tasks across ranks before sharding</title>
+<desc id="desc">Illustrative two-rank scheduling comparison. Interleaved A0 B0 A1 B1 sends task A to rank 0 and B to rank 1. Synchronized rank slots A0 A1 B0 B1 align task A on both ranks, then task B. Slots contain distinct batches, not replicated samples. Task A can use eight examples per rank and task B two. Eighteen real CPU Gloo two-process Trainer jobs cover six configurations times full, prefix and resume. No performance or GPU claim.</desc>
+<rect x="0" y="0" width="1600" height="1100" rx="0" fill="#ffffff" stroke="none"/>
+<text x="56" y="63" font-family="DejaVu Sans, sans-serif" font-size="37" font-weight="700" fill="#18283b" text-anchor="start">Align tasks across ranks before sharding</text>
+<text x="56" y="103" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="400" fill="#566579" text-anchor="start">Sentence Transformers · two-rank scheduling schematic (W = 2) · not a timing diagram</text>
+<rect x="56" y="129" width="1488" height="48" rx="8" fill="#f2f5f9" stroke="none"/>
+<text x="78" y="160" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="600" fill="#17619b" text-anchor="start">Task A: retrieval / all_gather</text>
+<text x="530" y="160" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="600" fill="#925c13" text-anchor="start">Task B: similarity / no all_gather</text>
+<text x="1120" y="160" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="400" fill="#566579" text-anchor="start">A₀, A₁: distinct batches</text>
+<rect x="56" y="200" width="728" height="579" rx="14" fill="#fbfcfe" stroke="#d6dfe9"/>
+<rect x="816" y="200" width="728" height="579" rx="14" fill="#fbfcfe" stroke="#d6dfe9"/>
+<text x="82" y="243" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="700" fill="#18283b" text-anchor="start">BEFORE · interleaved task batches</text>
+<text x="842" y="243" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="700" fill="#18283b" text-anchor="start">PROPOSED · same-task rank slots</text>
+<text x="82" y="283" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="400" fill="#566579" text-anchor="start">Batch stream before rank sharding</text>
+<text x="842" y="283" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="400" fill="#566579" text-anchor="start">Each group has W distinct batches of one task</text>
+<rect x="82" y="305" width="130" height="55" rx="8" fill="#e5f1fd" stroke="#17619b"/>
+<text x="147.0" y="341" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#17619b" text-anchor="middle">A₀</text>
+<rect x="249" y="305" width="130" height="55" rx="8" fill="#fff0d8" stroke="#925c13"/>
+<text x="314.0" y="341" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#925c13" text-anchor="middle">B₀</text>
+<rect x="416" y="305" width="130" height="55" rx="8" fill="#e5f1fd" stroke="#17619b"/>
+<text x="481.0" y="341" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#17619b" text-anchor="middle">A₁</text>
+<rect x="583" y="305" width="130" height="55" rx="8" fill="#fff0d8" stroke="#925c13"/>
+<text x="648.0" y="341" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#925c13" text-anchor="middle">B₁</text>
+<rect x="842" y="305" width="130" height="55" rx="8" fill="#e5f1fd" stroke="#17619b"/>
+<text x="907.0" y="341" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#17619b" text-anchor="middle">A₀</text>
+<rect x="1009" y="305" width="130" height="55" rx="8" fill="#e5f1fd" stroke="#17619b"/>
+<text x="1074.0" y="341" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#17619b" text-anchor="middle">A₁</text>
+<rect x="1176" y="305" width="130" height="55" rx="8" fill="#fff0d8" stroke="#925c13"/>
+<text x="1241.0" y="341" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#925c13" text-anchor="middle">B₀</text>
+<rect x="1343" y="305" width="130" height="55" rx="8" fill="#fff0d8" stroke="#925c13"/>
+<text x="1408.0" y="341" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#925c13" text-anchor="middle">B₁</text>
+<path d="M842,375 L1139,375" stroke="#94a3b8" stroke-width="2" fill="none"/>
+<text x="990.5" y="401" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="400" fill="#566579" text-anchor="middle">A group</text>
+<path d="M1176,375 L1473,375" stroke="#94a3b8" stroke-width="2" fill="none"/>
+<text x="1324.5" y="401" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="400" fill="#566579" text-anchor="middle">B group</text>
+<text x="82" y="408" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="400" fill="#566579" text-anchor="start">Accelerate selects alternating rank slots</text>
+<text x="842" y="435" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="400" fill="#566579" text-anchor="start">Accelerate alone selects each rank’s shard</text>
+<text x="324" y="476" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="600" fill="#566579" text-anchor="middle">Step 1</text>
+<text x="584" y="476" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="600" fill="#566579" text-anchor="middle">Step 2</text>
+<text x="82" y="531" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="600" fill="#18283b" text-anchor="start">Rank 0</text>
+<text x="82" y="608" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="600" fill="#18283b" text-anchor="start">Rank 1</text>
+<text x="1084" y="476" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="600" fill="#566579" text-anchor="middle">Step 1</text>
+<text x="1344" y="476" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="600" fill="#566579" text-anchor="middle">Step 2</text>
+<text x="842" y="531" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="600" fill="#18283b" text-anchor="start">Rank 0</text>
+<text x="842" y="608" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="600" fill="#18283b" text-anchor="start">Rank 1</text>
+<rect x="239" y="495" width="170" height="55" rx="8" fill="#e5f1fd" stroke="#17619b"/>
+<text x="324.0" y="531" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#17619b" text-anchor="middle">A₀</text>
+<rect x="499" y="495" width="170" height="55" rx="8" fill="#e5f1fd" stroke="#17619b"/>
+<text x="584.0" y="531" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#17619b" text-anchor="middle">A₁</text>
+<rect x="239" y="572" width="170" height="55" rx="8" fill="#fff0d8" stroke="#925c13"/>
+<text x="324.0" y="608" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#925c13" text-anchor="middle">B₀</text>
+<rect x="499" y="572" width="170" height="55" rx="8" fill="#fff0d8" stroke="#925c13"/>
+<text x="584.0" y="608" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#925c13" text-anchor="middle">B₁</text>
+<rect x="999" y="495" width="170" height="55" rx="8" fill="#e5f1fd" stroke="#17619b"/>
+<text x="1084.0" y="531" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#17619b" text-anchor="middle">A₀</text>
+<rect x="1259" y="495" width="170" height="55" rx="8" fill="#fff0d8" stroke="#925c13"/>
+<text x="1344.0" y="531" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#925c13" text-anchor="middle">B₀</text>
+<rect x="999" y="572" width="170" height="55" rx="8" fill="#e5f1fd" stroke="#17619b"/>
+<text x="1084.0" y="608" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#17619b" text-anchor="middle">A₁</text>
+<rect x="1259" y="572" width="170" height="55" rx="8" fill="#fff0d8" stroke="#925c13"/>
+<text x="1344.0" y="608" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#925c13" text-anchor="middle">B₁</text>
+<path d="M324,552 L324,570" stroke="#aab6c5" stroke-width="2" fill="none"/>
+<path d="M584,552 L584,570" stroke="#aab6c5" stroke-width="2" fill="none"/>
+<path d="M1084,552 L1084,570" stroke="#aab6c5" stroke-width="2" fill="none"/>
+<path d="M1344,552 L1344,570" stroke="#aab6c5" stroke-width="2" fill="none"/>
+<rect x="82" y="652" width="676" height="98" rx="8" fill="#fff1ef" stroke="none"/>
+<text x="101" y="685" font-family="DejaVu Sans, sans-serif" font-size="23" font-weight="700" fill="#a3312c" text-anchor="start">A ≠ B at the same step</text>
+<text x="101" y="718" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="400" fill="#a3312c" text-anchor="start">Task-specific collectives can be misaligned.</text>
+<rect x="842" y="652" width="676" height="98" rx="8" fill="#eaf6ee" stroke="none"/>
+<text x="861" y="685" font-family="DejaVu Sans, sans-serif" font-size="23" font-weight="700" fill="#26623d" text-anchor="start">A = A, then B = B</text>
+<text x="861" y="718" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="400" fill="#26623d" text-anchor="start">Same task on both ranks at every step.</text>
+<text x="56" y="823" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="700" fill="#18283b" text-anchor="start">Heterogeneous sizes remain per rank:</text>
+<text x="594" y="823" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="400" fill="#18283b" text-anchor="start">A = 8 examples/rank · B = 2 examples/rank</text>
+<text x="56" y="859" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="400" fill="#566579" text-anchor="start">Distinct sample shards; task-dependent batch sizes.</text>
+<path d="M56,886 L1544,886" stroke="#d6dfe9" stroke-width="2" fill="none"/>
+<text x="56" y="925" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="700" fill="#18283b" text-anchor="start">Validated: 18 real CPU/Gloo two-process Trainer runs</text>
+<text x="56" y="961" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="400" fill="#566579" text-anchor="start">6 configurations × full / prefix / resume; RR &amp; proportional; G = 1/2; epoch/resume; nonzero tails.</text>
+<text x="56" y="996" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="400" fill="#566579" text-anchor="start">G = gradient accumulation steps; deterministic CPU fixtures.</text>
+<text x="56" y="1047" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="600" fill="#26623d" text-anchor="start">Implementation validated; upstream review pending</text>
+<a href="https://github.com/Aurantium-47/sentence-transformers/tree/b71dd46c9021a409b701cc3b5e28286c8605ed13/research/synchronized-dataset-batches">
+<text x="1544" y="1047" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="400" fill="#17619b" text-anchor="end">Pinned evidence: b71dd46 · 2026-11-02</text>
+</a>
+</svg>

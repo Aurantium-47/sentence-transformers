@@ -5,6 +5,20 @@ Sentence Transformers PR. The recorded runs
 came from an independent validation environment; they are not newly run DDP jobs
 from PR packaging, upstream CI, or a human maintainer endorsement.
 
+## Illustrative scheduling overview
+
+![Two-rank task scheduling: interleaved task batches versus synchronized same-task rank slots](assets/synchronized-task-scheduling.svg)
+
+A scheduling schematic, not a timing or performance measurement: with W=2,
+interleaving `A₀,B₀,A₁,B₁` can assign different tasks to the two ranks at the same
+step. The proposed planner groups distinct same-task rank slots before Accelerate
+shards them, preserving task-dependent per-rank batch sizes (A=8, B=2).
+
+Implementation: [Sentence Transformers draft PR #4317](https://github.com/huggingface/sentence-transformers/pull/4317).
+The diagram is an explanatory addition, not new numerical validation; upstream
+review is pending. A [PNG copy](assets/synchronized-task-scheduling.png) and
+[SVG generation script](assets/build_diagram.py) are included.
+
 ## What is included
 
 - Both original native Trainer harnesses (standard A32/B8 and supplementary
@@ -16,6 +30,8 @@ from PR packaging, upstream CI, or a human maintainer endorsement.
   runtime package-file hashes, original dependency freeze, and exact production
   patch. No checkpoint, pickle, safetensors, binary traces or private log dump.
 - A JSON-only oracle replay entrypoint and a bounded fresh-run launcher.
+- An illustrative SVG/PNG scheduling diagram and its generation script. The PNG
+  is a documentation image, not binary training state; no checkpoint is included.
 
 `traces/standard/` corresponds to the source `native_runs/`; `traces/tail/`
 corresponds to `native_tail_runs/`. `SANITIZATION.json` maps every imported file,

@@ -9,12 +9,12 @@
     "result": "evidence/public_trace_oracle_replay.json"
   },
   "launcher_synthetic_nested_session_timeout_test": "passed; two descendants checked; zero running survivors",
-  "python_syntax_files_checked": 5,
+  "python_syntax_files_checked": 6,
   "original_harness_executable_AST_unchanged": true,
   "sanitization": "Only absolute path strings rewritten, JSON compacted; numerical values unchanged. Original imported hashes and pointer-level string changes in SANITIZATION.json.",
   "binary_checkpoint_files_included": 0,
   "private_path_identifier_and_common_token_scan": "passed (scoped textual scan; not general secret-scanner certification)",
-  "publication_status": "local preparation only; no remote URL or commit created",
+  "publication_status": "visual appendix prepared locally for the already published pinned evidence; this appendix has not been published",
   "independent_compare": {
     "reviewer": "separate parent-agent audit",
     "scope": "36 rank JSON traces and 4 original validation summaries",
@@ -24,5 +24,31 @@
     "harness_executable_AST_matches_original": true,
     "production_only_patch_matches_upstream_candidate_three_production_hunks": true,
     "prohibited_binary_private_literal_scan": "passed"
+  },
+  "visual_appendix": {
+    "base_evidence_url": "https://github.com/Aurantium-47/sentence-transformers/tree/b71dd46c9021a409b701cc3b5e28286c8605ed13/research/synchronized-dataset-batches",
+    "draft_pr_url": "https://github.com/huggingface/sentence-transformers/pull/4317",
+    "base_file_count": 60,
+    "final_file_count": 63,
+    "checksum_entries": 62,
+    "added_files": [
+      "assets/build_diagram.py",
+      "assets/synchronized-task-scheduling.png",
+      "assets/synchronized-task-scheduling.svg"
+    ],
+    "modified_base_files": [
+      "README.md",
+      "SHA256SUMS",
+      "VALIDATION.json"
+    ],
+    "unchanged_base_files": 57,
+    "numerical_traces_harnesses_and_production_patch": "byte-identical to frozen base package",
+    "new_training_runs": 0,
+    "new_numerical_replays": 0,
+    "rendering": "Python stdlib SVG generation; native Inkscape PNG render; 1600x1100 pixel inspection passed",
+    "png_is_documentation_image_not_binary_training_state": true,
+    "scope": "Scheduling schematic, not timing or performance measurement. Full numerical scope and limitations remain in README.",
+    "figure_library_id": "libfile_2c58f82582e481918403fea903ac6a1b",
+    "figure_library_version": 1
   }
 }
