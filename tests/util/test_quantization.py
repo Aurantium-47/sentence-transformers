@@ -705,3 +705,133 @@ def test_semantic_search_usearch_float_index_preserves_native_scores(dtype: str,
         for row, keys, distances in zip(results, native.keys, native.distances):
             assert [entry["corpus_id"] for entry in row] == keys.tolist()
             np.testing.assert_allclose([entry["score"] for entry in row], distances, rtol=1e-5, atol=1e-7)
+
+
+@skip_without_faiss
+@pytest.mark.parametrize("exact", [True, False])
+@pytest.mark.parametrize("reuse_index", [False, True])
+def test_semantic_search_faiss_uint8_candidate_recall(exact: bool, reuse_index: bool) -> None:
+    """Default two-candidate rescoring must not omit the best of three unit vectors."""
+    queries = np.array([[-0.8, 0.6]], dtype=np.float32)
+    corpus = np.array([[0.8, 0.6], [0, 1], [-0.8, 0.6]], dtype=np.float32)
+    ranges = np.array([[-1, -1], [1, 1]], dtype=np.float32)
+    codes = quantize_embeddings(corpus, "uint8", ranges=ranges)
+    kwargs = {"corpus_embeddings": codes}
+    if reuse_index:
+        _, _, index = semantic_search_faiss(
+            queries,
+            **kwargs,
+            corpus_precision="uint8",
+            ranges=ranges,
+            exact=exact,
+            rescore=False,
+            output_index=True,
+        )
+        kwargs = {"corpus_index": index}
+
+    results, _ = semantic_search_faiss(
+        queries,
+        **kwargs,
+        corpus_precision="uint8",
+        ranges=ranges,
+        exact=exact,
+        top_k=1,
+    )
+
+    reconstructed = codes.astype(np.float64) * ((ranges[1] - ranges[0]) / 255) + ranges[0]
+    scores = queries @ reconstructed.T
+    assert results[0][0]["corpus_id"] == 2
+    assert results[0][0]["score"] == pytest.approx(scores[0, 2])
+
+
+@skip_without_faiss
+@pytest.mark.parametrize("calibration_source", ["ranges", "calibration_embeddings", "queries"])
+@pytest.mark.parametrize("constant_dimension", [False, True])
+@pytest.mark.parametrize("query_dtype", [np.float16, np.float32, np.float64])
+def test_semantic_search_faiss_uint8_candidates_match_reconstructed_corpus(
+    calibration_source: str,
+    constant_dimension: bool,
+    query_dtype,
+) -> None:
+    """Candidate ranking uses signed float queries and dimension-specific scales."""
+    rng = np.random.default_rng(4058)
+    ranges = np.array([[-3, 1, -7], [-2.5, 9, 4]], dtype=np.float32)
+    if constant_dimension:
+        ranges[:, 0] = 2
+    corpus = rng.uniform(ranges[0], ranges[1], (40, 3)).astype(np.float32)
+    queries = np.vstack((ranges, rng.uniform(ranges[0], ranges[1], (8, 3)))).astype(query_dtype)
+    codes = quantize_embeddings(corpus, "uint8", ranges=ranges)
+    kwargs = {}
+    if calibration_source == "ranges":
+        kwargs = {"ranges": ranges, "calibration_embeddings": ranges + 10}
+    elif calibration_source == "calibration_embeddings":
+        kwargs = {"calibration_embeddings": ranges}
+
+    results, _ = semantic_search_faiss(
+        queries,
+        corpus_embeddings=codes,
+        corpus_precision="uint8",
+        top_k=3,
+        **kwargs,
+    )
+
+    steps = (ranges[1] - ranges[0]) / 255
+    steps = np.where(steps == 0, 1, steps)
+    reconstructed = codes.astype(np.float64) * steps + ranges[0]
+    scores = queries.astype(np.float64) @ reconstructed.T
+    for hits, row in zip(results, scores):
+        ids = [hit["corpus_id"] for hit in hits]
+        np.testing.assert_allclose(row[ids], np.sort(row)[-3:][::-1], rtol=1e-6, atol=1e-6)
+        np.testing.assert_allclose([hit["score"] for hit in hits], row[ids], rtol=1e-6, atol=1e-6)
+
+
+@skip_without_faiss
+@pytest.mark.parametrize(("quantized_query", "rescore"), [(False, False), (True, False), (True, True)])
+def test_semantic_search_faiss_uint8_preserves_code_search(quantized_query: bool, rescore: bool) -> None:
+    """No rescoring and already quantized queries retain native code-space scores."""
+    import faiss
+
+    ranges = np.array([[-1, -1], [1, 1]], dtype=np.float32)
+    codes = np.array([[229, 204], [127, 255], [25, 204]], dtype=np.uint8)
+    queries = np.array([[-0.8, 0.6]], dtype=np.float32)
+    query_codes = quantize_embeddings(queries, "uint8", ranges=ranges)
+    index = faiss.IndexFlatIP(2)
+    index.add(codes)
+    scores, ids = index.search(query_codes, 2)
+    results, _ = semantic_search_faiss(
+        query_codes if quantized_query else queries,
+        corpus_index=index,
+        corpus_precision="uint8",
+        ranges=ranges,
+        top_k=2,
+        rescore=rescore,
+    )
+    assert [hit["corpus_id"] for hit in results[0]] == ids[0].tolist()
+    np.testing.assert_array_equal([hit["score"] for hit in results[0]], scores[0])
+
+
+@skip_without_faiss
+def test_semantic_search_faiss_uint8_preserves_supplied_l2_candidates() -> None:
+    """The asymmetric inner-product transformation must not reinterpret an L2 index."""
+    import faiss
+
+    ranges = np.array([[-1, -1], [1, 1]], dtype=np.float32)
+    codes = np.array([[229, 204], [127, 255], [25, 204]], dtype=np.uint8)
+    queries = np.array([[-0.8, 0.6]], dtype=np.float32)
+    index = faiss.IndexFlatL2(2)
+    index.add(codes)
+    _, ids = index.search(quantize_embeddings(queries, "uint8", ranges=ranges), 2)
+    reconstructed = codes.astype(np.float64) * ((ranges[1] - ranges[0]) / 255) + ranges[0]
+    candidate_scores = (queries @ reconstructed.T)[0, ids[0]]
+    expected = int(ids[0, candidate_scores.argmax()])
+
+    results, _ = semantic_search_faiss(
+        queries,
+        corpus_index=index,
+        corpus_precision="uint8",
+        ranges=ranges,
+        top_k=1,
+    )
+
+    assert results[0][0]["corpus_id"] == expected
+    assert results[0][0]["score"] == pytest.approx(candidate_scores.max())

@@ -41,7 +41,10 @@ def semantic_search_faiss(
     keep `top_k`.
 
     Scalar-quantized candidates are dequantized before rescoring. Use the same `ranges` or
-    `calibration_embeddings` that were used to quantize the corpus.
+    `calibration_embeddings` that were used to quantize the corpus. For floating-point queries
+    with uint8 rescoring and an inner-product index, candidate search also uses these scales
+    to rank the reconstructed corpus. Approximate indexes still perform approximate search.
+    Supplied indexes with other metrics retain their existing candidate search behavior.
 
     Args:
         query_embeddings: Embeddings of the query sentences. Ideally not
@@ -122,9 +125,7 @@ def semantic_search_faiss(
 
         corpus_index.add(corpus_embeddings)
 
-    # If rescoring is enabled and the query embeddings are in float32, we need to quantize them
-    # to the same precision as the corpus embeddings. Also update the top_k value to account for the
-    # rescore_multiplier
+    # Prepare queries for the corpus precision and update top_k for the rescore_multiplier.
     rescore_embeddings = None
     k = top_k
     if query_embeddings.dtype not in (np.uint8, np.int8):
@@ -141,12 +142,26 @@ def semantic_search_faiss(
 
         if rescore_embeddings is not None and corpus_precision == "uint8" and ranges is None:
             ranges = _get_quantization_ranges(query_embeddings, corpus_precision, calibration_embeddings)
-        query_embeddings = quantize_embeddings(
-            query_embeddings,
-            precision=corpus_precision,
-            ranges=ranges,
-            calibration_embeddings=calibration_embeddings,
-        )
+        if (
+            rescore_embeddings is not None
+            and corpus_precision == "uint8"
+            and np.issubdtype(query_embeddings.dtype, np.floating)
+            and corpus_index.metric_type == faiss.METRIC_INNER_PRODUCT
+        ):
+            ranges = ranges.astype(np.float32, copy=False)
+            steps = (ranges[1] - ranges[0]) / 255
+            steps = np.where(steps == 0, 1, steps)
+            # q @ (codes * steps + starts) = (q * steps) @ codes + q @ starts.
+            # The last term is constant across documents, so search with the scaled float
+            # query to avoid losing the best candidates before dequantized rescoring.
+            query_embeddings = np.ascontiguousarray(query_embeddings * steps, dtype=np.float32)
+        else:
+            query_embeddings = quantize_embeddings(
+                query_embeddings,
+                precision=corpus_precision,
+                ranges=ranges,
+                calibration_embeddings=calibration_embeddings,
+            )
     elif rescore:
         logger.warning(
             "Rescoring is enabled but the query embeddings are quantized. Either pass `rescore=False` or don't quantize the query embeddings."
