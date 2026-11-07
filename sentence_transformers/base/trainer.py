@@ -9,7 +9,7 @@ import shutil
 from abc import ABC, abstractmethod
 from collections import OrderedDict
 from collections.abc import Callable
-from functools import partial
+from functools import partial, wraps
 from typing import Any
 
 import torch
@@ -64,7 +64,7 @@ if is_datasets_available():
     from datasets import Dataset, DatasetDict, IterableDataset, IterableDatasetDict, Sequence, Value
 
 if is_training_available():
-    from accelerate.utils import broadcast_object_list
+    from accelerate.utils import DistributedType, broadcast_object_list
 
 logger = logging.getLogger(__name__)
 
@@ -392,6 +392,35 @@ class BaseTrainer(Trainer, ABC):
             # Only MultiVectorEncoderTrainingArguments defines max_length so far.
             max_length=getattr(args, "max_length", None),
         )
+
+    def create_accelerator_and_postprocess(self) -> None:
+        super().create_accelerator_and_postprocess()
+        clip_grad_norm = self.accelerator.clip_grad_norm_
+
+        # Transformers clips model.parameters(), although our optimizer can also own loss
+        # parameters. Adapt only this trainer's accelerator: older supported Transformers
+        # versions do not expose a Trainer clipping hook. Distributed backends retain their
+        # own clipping behavior, which can depend on sharded/wrapped model parameters.
+        @wraps(clip_grad_norm)
+        def clip_optimizer_grad_norm(parameters, *args, **kwargs):
+            if self.accelerator.distributed_type == DistributedType.NO and self.optimizer is not None:
+                model_parameter_ids = {id(parameter) for parameter in self.model.parameters()}
+                extra_parameters = [
+                    parameter
+                    for group in self.optimizer.param_groups
+                    for parameter in group["params"]
+                    if id(parameter) not in model_parameter_ids
+                ]
+                if extra_parameters:
+                    parameters = list(parameters)
+                    seen = {id(parameter) for parameter in parameters}
+                    for parameter in extra_parameters:
+                        if id(parameter) not in seen:
+                            parameters.append(parameter)
+                            seen.add(id(parameter))
+            return clip_grad_norm(parameters, *args, **kwargs)
+
+        self.accelerator.clip_grad_norm_ = clip_optimizer_grad_norm
 
     def add_model_card_callback(self, default_args_dict: dict[str, Any]) -> None:
         """

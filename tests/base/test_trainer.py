@@ -436,10 +436,11 @@ def test_embedding_distillation_with_tensor_formatted_labels(loss_training_model
     assert torch.isfinite(weights).all()
 
 
+@pytest.mark.parametrize("max_grad_norm", [0.0, 0.1])
 @pytest.mark.parametrize("gradient_accumulation_steps", [1, 2])
 @pytest.mark.parametrize("loss_class", [SoftmaxLoss, CosineSimilarityLoss, MSELoss])
 def test_loss_gradients_match_manual_training(
-    loss_training_model, tmp_path, gradient_accumulation_steps: int, loss_class
+    loss_training_model, tmp_path, gradient_accumulation_steps: int, loss_class, max_grad_norm: float
 ) -> None:
     model = loss_training_model
     if loss_class is SoftmaxLoss:
@@ -464,7 +465,7 @@ def test_loss_gradients_match_manual_training(
         optim="sgd",
         learning_rate=0.1,
         lr_scheduler_type="constant",
-        max_grad_norm=0.0,
+        max_grad_norm=max_grad_norm,
         save_strategy="no",
         report_to=[],
         disable_tqdm=True,
@@ -479,6 +480,8 @@ def test_loss_gradients_match_manual_training(
         for _ in range(gradient_accumulation_steps):
             features = [reference_loss.model.preprocess([text] * 2) for text in ["hello", "world"]]
             (reference_loss(features, torch.tensor([label] * 2)) / gradient_accumulation_steps).backward()
+        if max_grad_norm:
+            torch.nn.utils.clip_grad_norm_(reference_loss.parameters(), max_grad_norm)
         optimizer.step()
 
     for parameter, expected in zip(loss.parameters(), reference_loss.parameters()):
@@ -532,3 +535,56 @@ def test_multi_objective_training_only_updates_active_loss(loss_training_model, 
     )
     trainer.train()
     assert all(parameter.grad is None for parameter in parameters)
+
+
+@pytest.mark.parametrize("include_loss_parameters", [False, True])
+@pytest.mark.parametrize("distributed", [False, True])
+def test_gradient_clipping_preserves_accelerator_delegation(
+    loss_training_model, tmp_path, include_loss_parameters: bool, distributed: bool
+) -> None:
+    from accelerate import Accelerator
+    from accelerate.utils import DistributedType
+
+    model = loss_training_model
+    loss = SoftmaxLoss(model, model.get_embedding_dimension(), num_labels=3)
+    # A user-supplied optimizer defines which parameters can actually be updated.
+    optimizer = torch.optim.SGD(loss.parameters() if include_loss_parameters else model.parameters(), lr=0.1)
+    args = SentenceTransformerTrainingArguments(output_dir=str(tmp_path), use_cpu=True, report_to=[])
+    with patch.object(Accelerator, "clip_grad_norm_", return_value=torch.tensor(7.0)) as clip:
+        trainer = SentenceTransformerTrainer(model=model, args=args, loss=loss, optimizers=(optimizer, None))
+        parameters = iter(model.parameters())
+        # This is a delegation test only: no distributed process group is initialized.
+        backend = DistributedType.MULTI_CPU if distributed else DistributedType.NO
+        with patch.object(trainer.accelerator.state, "distributed_type", backend):
+            norm = trainer.accelerator.clip_grad_norm_(parameters, max_norm=0.5, norm_type=1.0)
+        assert norm is clip.return_value
+        received = clip.call_args.args[0]
+        assert clip.call_args.kwargs == {"max_norm": 0.5, "norm_type": 1.0}
+        if include_loss_parameters and not distributed:
+            assert {id(parameter) for parameter in received} == {id(parameter) for parameter in loss.parameters()}
+            assert len(received) == len({id(parameter) for parameter in received})
+        else:
+            assert received is parameters
+
+
+def test_gradient_clipping_shared_loss_parameters(loss_training_model, tmp_path) -> None:
+    model = loss_training_model
+    first = SoftmaxLoss(model, model.get_embedding_dimension(), num_labels=3)
+    second = SoftmaxLoss(model, model.get_embedding_dimension(), num_labels=3)
+    losses = {"first": first, "shared": first, "second": second}
+    args = SentenceTransformerTrainingArguments(output_dir=str(tmp_path), use_cpu=True, report_to=[])
+    trainer = SentenceTransformerTrainer(model=model, args=args, loss=losses)
+    trainer.create_optimizer()
+    parameters = [parameter for group in trainer.optimizer.param_groups for parameter in group["params"]]
+    assert len(parameters) == len({id(parameter) for parameter in parameters})
+    for parameter in parameters:
+        parameter.grad = torch.ones_like(parameter)
+    # An inactive loss can have no gradients on this step.
+    second.classifier.weight.grad = None
+    second.classifier.bias.grad = None
+    gradients = [parameter.grad.clone() for parameter in parameters if parameter.grad is not None]
+    expected_norm = torch.linalg.vector_norm(torch.stack([gradient.norm() for gradient in gradients]))
+    norm = trainer.accelerator.clip_grad_norm_(model.parameters(), 0.5)
+    torch.testing.assert_close(norm, expected_norm)
+    for parameter, gradient in zip((parameter for parameter in parameters if parameter.grad is not None), gradients):
+        torch.testing.assert_close(parameter.grad, gradient * (0.5 / (expected_norm + 1e-6)))
