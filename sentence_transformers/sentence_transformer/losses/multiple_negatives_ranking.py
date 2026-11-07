@@ -10,6 +10,7 @@ from torch import Tensor, nn
 from sentence_transformers.base.losses.merged_forward import embed_columns
 from sentence_transformers.sentence_transformer.model import SentenceTransformer
 from sentence_transformers.util import all_gather_with_grad, cos_sim, get_rank, similarity_fct_name
+from sentence_transformers.util.tensor import _convert_to_float_tensor
 
 logger = logging.getLogger(__name__)
 
@@ -282,6 +283,10 @@ class MultipleNegativesRankingLoss(nn.Module):
             same_query_doc_mask = torch.eye(world_batch_size, device=queries.device)[local_indices]
             same_query_doc_mask = same_query_doc_mask.repeat(1, len(docs)).bool()
             sim_matrices["doc_to_doc"].masked_fill_(same_query_doc_mask, -torch.inf)
+
+        # Keep loss arithmetic in at least float32, including under autocast.
+        # Low-precision scaling and logsumexp can round away the loss and distort gradients.
+        sim_matrices = {key: _convert_to_float_tensor(scores) for key, scores in sim_matrices.items()}
 
         # Compute hardness penalties on the unscaled (raw cosine) similarities (Lan et al. 2025, Eq. 5).
         # penalty = alpha * stop_grad(cos_sim), making harder negatives contribute more to the
